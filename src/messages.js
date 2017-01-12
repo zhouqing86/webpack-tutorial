@@ -1,4 +1,4 @@
 module.exports = {
-  hi: 'Hello There!',
+  hi: 'Hello!',
   test: 'Up Javascript!'
 };

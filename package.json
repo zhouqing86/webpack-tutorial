@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && webpack src/index.js dist/bundle.js --watch"
+    "build": "rimraf dist && webpack --watch"
   },
   "author": "",
   "license": "ISC",
