@@ -1,3 +1,3 @@
+var messages = require('./messages');
 var app = document.getElementById('app');
-console.log("dafafa");
-app.innerHTML = '<p>Hi there</p>';
+app.innerHTML = '<p>' + messages.hi + ',' + messages.test + '</p>';
