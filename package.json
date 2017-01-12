@@ -1,0 +1,17 @@
+{
+  "name": "webpack-tut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && webpack src/index.js dist/bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "rimraf": "^2.5.4",
+    "webpack": "^2.1.0-beta.28"
+  }
+}
