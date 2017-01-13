@@ -1,10 +1,20 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    app: [
+      "./src/index.js",
+      "webpack-dev-server/client?http://localhost:8080/",
+      "webpack/hot/dev-server"
+    ]
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "build"),
+    publicPath: "/assets/",
+    filename: "bundle.js"
   }
 }
