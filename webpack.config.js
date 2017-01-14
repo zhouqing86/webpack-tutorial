@@ -46,6 +46,9 @@ const cssLoader = PRODUCTION
   : ['style-loader', 'css-loader?localIdentName=[path][name]---[local]']
 
 module.exports = {
+  externals: {
+    'jquery': 'jQuery'
+  },
   devtool: 'source-map',
   entry: {
     app: app
