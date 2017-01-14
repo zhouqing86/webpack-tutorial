@@ -26,6 +26,13 @@ var plugins = PRODUCTION
       new webpack.HotModuleReplacementPlugin()
     ];
 
+plugins.push(
+  new webpack.DefinePlugin({
+    DEVELOPMENT: JSON.stringify(DEVELOPMENT),
+    PRODUCTION: JSON.stringify(PRODUCTION)
+  })
+);
+
 module.exports = {
   devtool: 'source-map',
   entry: {
