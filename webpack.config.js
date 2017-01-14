@@ -50,6 +50,11 @@ module.exports = {
         test: /\.(png|jpg|gif)$/,
         exclude: /node_modules/,
         loader: 'url-loader?limit=10000&name=images/[hash:12].[ext]',
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loaders: ['style-loader', 'css-loader']
       }
     ]
   },
