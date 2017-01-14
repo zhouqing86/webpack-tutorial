@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var DEVELOPMENT = process.env.NODE_ENV === 'development';
 var PRODUCTION = process.env.NODE_ENV === 'production';
@@ -20,7 +21,8 @@ var plugins = PRODUCTION
         compress: {
           warnings: true
         }
-      })
+      }),
+      new ExtractTextPlugin('styles-[contenthash:10].css')
     ]
   : [
       new webpack.HotModuleReplacementPlugin()
@@ -32,6 +34,12 @@ plugins.push(
     PRODUCTION: JSON.stringify(PRODUCTION)
   })
 );
+
+const cssLoader = PRODUCTION
+  ? ExtractTextPlugin.extract({
+      loader: 'css-loader?localIdentName=[hash:base64:10]'
+    })
+  : ['style-loader', 'css-loader?localIdentName=[path][name]---[local]']
 
 module.exports = {
   devtool: 'source-map',
@@ -54,7 +62,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader']
+        loaders: cssLoader
       }
     ]
   },
