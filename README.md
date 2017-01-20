@@ -11,3 +11,5 @@ Run the server with `http-server -p 8080` or `python -m SimpleHTTPServer 8080` t
 
 And then visit [http://localhost:8080](http://localhost:8080)
 
+## Recommendation
+git checkout to the first commit, and then second commit .....
