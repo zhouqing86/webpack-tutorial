@@ -8,4 +8,8 @@ describe('test', () => {
   it('minus test', () => {
     expect(1-1).to.equal(0);
   });
+
+  it('multiply test', () => {
+    expect(2*3).to.equal(6);
+  });
 });
